@@ -113,6 +113,18 @@ namespace ChaoticCupid.Server.Services
             return match;
         }
 
+        // method to set the waiting confirmation flag to true for a person
+        public void SetWaitingConfirmation(string connectionId)
+        {
+            Person? person = _persons.FirstOrDefault(p => p.ConnectionId == connectionId);
+            if (person == null)
+            {
+                throw new Exception("Person not found");
+            }
+            // set the waiting confirmation flag to true
+            person.IsWaitingConfirmation = true;
+        }
+
         // method to calculate random points using RNGCryptoServiceProvider
         private int calculateRandomPoints()
         {

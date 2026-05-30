@@ -8,6 +8,16 @@ namespace ChaoticCupid.Shared.Models
 {
     public class LetterDTO
     {
+        public LetterDTO(string fromUsername, string fromCity, int fromAge, string fromPhone, string message, bool showPhone)
+        {
+            FromUsername = fromUsername;
+            FromCity = fromCity;
+            FromAge = fromAge;
+            FromPhone = fromPhone;
+            Message = message;
+            ShowPhone = showPhone;
+        }
+
         public string FromUsername { get; set; }
         public string FromCity { get; set; }
         public int FromAge { get; set; }
