@@ -10,5 +10,6 @@ namespace ChaoticCupid.Server.Services
         void BlockUser(string connectionId, string username);
         IEnumerable<Person> getAllPersons();
         Person? FindBestMatch(Person sender);
+        void SetWaitingConfirmation(string connectionId);
     }
 }
