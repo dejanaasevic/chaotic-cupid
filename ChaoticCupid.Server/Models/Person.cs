@@ -8,12 +8,20 @@ namespace ChaoticCupid.Server.Models
 {
     public class Person
     {
-        public string ConnectionId { get; set; }
+        public Person(string username, string city, int age, string phoneNumber)
+        {
+            Username = username;
+            City = city;
+            Age = age;
+            PhoneNumber = phoneNumber;
+        }
+
+        public string ConnectionId { get; set; } = string.Empty;
         public string Username { get; set; }
         public string City { get; set; }
         public int Age { get; set; }
         public string PhoneNumber { get; set; }
         public List<string> BlockedUsers { get; set; } = new List<string>();
-        public bool IsWaitingConfirmation { get; set; }    
+        public bool IsWaitingConfirmation { get; set; } = false; 
     }
 }
